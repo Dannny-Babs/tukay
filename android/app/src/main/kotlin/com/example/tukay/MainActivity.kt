@@ -1,4 +1,4 @@
-package com.example.tukay
+package com.exampletukay
 
 import io.flutter.embedding.android.FlutterActivity
 
