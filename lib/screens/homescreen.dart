@@ -68,273 +68,315 @@ class _HomescreenState extends State<Homescreen>
     String selectedValue = "NGN";
     return Scaffold(
       backgroundColor: const Color.fromRGBO(241, 244, 237, 1),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            Row(
-              children: [
-                Expanded(
-                    child: Row(
-                  children: [
-                    ClipOval(
-                        child: Image.asset(
-                      'images/head.jpg',
-                      width: 50,
-                      height: 50,
-                    )),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Welcome 🙌',
-                          style: TextStyle(
-                              height: 0.7,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey),
-                        ),
-                        Text(
-                          'Katola Kehinde',
-                          style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.secondaryColor),
-                        ),
-                      ],
-                    )
-                  ],
-                )),
-                const SizedBox(
-                  width: 10,
-                ),
-                const Icon(
-                  SolarIconsOutline.bellBing,
-                  color: AppColors.secondaryColor,
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              height: 50,
-              decoration: BoxDecoration(
-                  color: AppColors.white,
-                  border: Border.all(color: AppColors.secondaryColor),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 40,
+              ),
+              Row(
                 children: [
+                  Expanded(
+                      child: Row(
+                    children: [
+                      ClipOval(
+                          child: Image.asset(
+                        'images/head.jpg',
+                        width: 50,
+                        height: 50,
+                      )),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Welcome 🙌',
+                            style: TextStyle(
+                                height: 0.7,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey),
+                          ),
+                          Text(
+                            'Katola Kehinde',
+                            style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.secondaryColor),
+                          ),
+                        ],
+                      )
+                    ],
+                  )),
                   const SizedBox(
                     width: 10,
                   ),
                   const Icon(
-                    Icons.search,
+                    SolarIconsOutline.bellBing,
                     color: AppColors.secondaryColor,
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Search for beggers',
-                          hintStyle: TextStyle(
-                              color: Colors.greenAccent[900],
-                              fontSize: 19,
-                              fontWeight: FontWeight.w600)),
-                    ),
-                  )
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Container(
-              height: 50,
-              padding: const EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
+              const SizedBox(
+                height: 20,
               ),
-              child: TabBar(
-                controller: _tabController,
-                indicatorWeight: double.minPositive,
-                labelColor: AppColors.secondaryColor,
-                unselectedLabelColor: Colors.grey,
-                indicator: BoxDecoration(
-                  color: AppColors.primaryColor,
+              Container(
+                height: 50,
+                decoration: BoxDecoration(
+                    color: AppColors.white,
+                    border: Border.all(color: AppColors.secondaryColor),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                  children: [
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Icon(
+                      Icons.search,
+                      color: AppColors.secondaryColor,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Search for beggers',
+                            hintStyle: TextStyle(
+                                color: Colors.greenAccent[900],
+                                fontSize: 19,
+                                fontWeight: FontWeight.w600)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 50,
+                padding: const EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                indicatorSize: TabBarIndicatorSize.tab,
-                tabs: const [
-                  Tab(
-                    child: MyText(
-                      text: 'I wan Send',
-                      color: AppColors.secondaryColor,
-                      size: 20,
-                    ),
+                child: TabBar(
+                  controller: _tabController,
+                  indicatorWeight: double.minPositive,
+                  labelColor: AppColors.secondaryColor,
+                  unselectedLabelColor: Colors.grey,
+                  indicator: BoxDecoration(
+                    color: AppColors.primaryColor,
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  Tab(
-                    child: MyText(
-                      text: 'I wan Beg',
-                      color: AppColors.secondaryColor,
-                      size: 20,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  tabs: const [
+                    Tab(
+                      child: MyText(
+                        text: 'I wan Send',
+                        color: AppColors.secondaryColor,
+                        size: 20,
+                      ),
                     ),
-                  ),
-                ],
+                    Tab(
+                      child: MyText(
+                        text: 'I wan Beg',
+                        color: AppColors.secondaryColor,
+                        size: 20,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      image: AssetImage('images/card.png'), fit: BoxFit.cover),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const MyText(
-                          text: 'Your Money', color: Colors.black54, size: 18),
-                      const Spacer(),
-                      Container(
-                        width: 60,
-                        height: 30,
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                            color: AppColors.primaryColor,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: DropdownButton(
-                            underline: const SizedBox(),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    image: const DecorationImage(
+                        image: AssetImage('images/card.png'),
+                        fit: BoxFit.cover),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const MyText(
+                            text: 'Your Money',
+                            color: Colors.black54,
+                            size: 18),
+                        const Spacer(),
+                        Container(
+                          width: 60,
+                          height: 30,
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                              color: AppColors.primaryColor,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: DropdownButton(
+                              underline: const SizedBox(),
+                              alignment: Alignment.center,
+                              value: selectedValue,
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  selectedValue = newValue!;
+                                });
+                              },
+                              items: dropdownItems),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'NGN 465,000',
+                          style: GoogleFonts.darkerGrotesque(
+                              fontSize: 40, fontWeight: FontWeight.w800),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Icon(
+                          SolarIconsBold.eye,
+                          color: Colors.grey,
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 50,
+                      margin: const EdgeInsets.only(top: 20),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: AppColors.white,
+                          border: const Border.fromBorderSide(
+                              BorderSide(color: AppColors.secondaryColor)),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Text('#6 Cashback on every 2k you borrow',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.darkerGrotesque(
+                              fontSize: 27,
+                              height: 1,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.secondaryColor)),
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 40,
+                            margin: const EdgeInsets.only(top: 20),
                             alignment: Alignment.center,
-                            value: selectedValue,
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                selectedValue = newValue!;
-                              });
-                            },
-                            items: dropdownItems),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'NGN 465,000',
-                        style: GoogleFonts.darkerGrotesque(
-                            fontSize: 40, fontWeight: FontWeight.w800),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Icon(
-                        SolarIconsBold.eye,
-                        color: Colors.grey,
-                      ),
-                    ],
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 50,
-                    margin: const EdgeInsets.only(top: 20),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: AppColors.white,
-                        border: const Border.fromBorderSide(
-                            BorderSide(color: AppColors.secondaryColor)),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Text('#6 Cashback on every 2k you borrow',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.darkerGrotesque(
-                            fontSize: 27,
-                            height: 1,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.secondaryColor)),
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          height: 40,
-                          margin: const EdgeInsets.only(top: 20),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('Do giveaway ',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.darkerGrotesque(
-                                      fontSize: 23,
-                                      height: 1,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.secondaryColor)),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              const Icon(
-                                SolarIconsBold.walletMoney,
-                                color: AppColors.secondaryColor,
-                              )
-                            ],
+                            decoration: BoxDecoration(
+                                color: AppColors.primaryColor,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Do giveaway ',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.darkerGrotesque(
+                                        fontSize: 23,
+                                        height: 1,
+                                        fontWeight: FontWeight.w700,
+                                        color: AppColors.secondaryColor)),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                const Icon(
+                                  SolarIconsBold.walletMoney,
+                                  color: AppColors.secondaryColor,
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 40,
-                          margin: const EdgeInsets.only(top: 20),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('Send Money',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.darkerGrotesque(
-                                      fontSize: 23,
-                                      height: 1,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.secondaryColor)),
-                              const SizedBox(width: 5),
-                              const Icon(
-                                SolarIconsBold.plain,
-                                color: AppColors.secondaryColor,
-                              )
-                            ],
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 40,
+                            margin: const EdgeInsets.only(top: 20),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                color: AppColors.primaryColor,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Send Money',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.darkerGrotesque(
+                                        fontSize: 23,
+                                        height: 1,
+                                        fontWeight: FontWeight.w700,
+                                        color: AppColors.secondaryColor)),
+                                const SizedBox(width: 5),
+                                const Icon(
+                                  SolarIconsBold.plain,
+                                  color: AppColors.secondaryColor,
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 175,
+                decoration: BoxDecoration(
+                    image: const DecorationImage(
+                        image: AssetImage('images/tap.png'),
+                        fit: BoxFit.fitHeight),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              /* ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) => Container(
+                  height: 100,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Row(
+                    children: [
+                      ClipOval(
+                          child: Image.asset(
+                        'images/head.jpg',
+                        width: 45,
+                        height: 45,
+                      )),
+                    ],
+                  ),
+                ),
+              ),
+            */
+            ],
+          ),
         ),
       ),
     );
