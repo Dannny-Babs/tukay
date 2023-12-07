@@ -69,6 +69,7 @@ class _HomescreenState extends State<Homescreen>
     return Scaffold(
       backgroundColor: const Color.fromRGBO(241, 244, 237, 1),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -352,29 +353,108 @@ class _HomescreenState extends State<Homescreen>
                     borderRadius: BorderRadius.circular(20)),
               ),
               const SizedBox(
-                height: 80,
+                height: 20,
               ),
-              /* ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) => Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
                     children: [
-                      ClipOval(
-                          child: Image.asset(
-                        'images/head.jpg',
-                        width: 45,
-                        height: 45,
-                      )),
+                      Text(
+                        'Recent Transactions',
+                        style: GoogleFonts.darkerGrotesque(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black87),
+                      ),
+                      const Spacer(),
+                      Text(
+                        'See all',
+                        style: GoogleFonts.darkerGrotesque(
+                            color: const Color.fromARGB(255, 84, 99, 0),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline),
+                      ),
                     ],
                   ),
-                ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 5,
+                    itemBuilder: (context, index) => Container(
+                      height: 75,
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.only(bottom: 10),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: AppColors.white,
+                          border: Border.all(color: AppColors.secondaryColor),
+                          borderRadius: BorderRadius.circular(16)),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              clipBehavior: Clip.hardEdge,
+                              child: Image.asset(
+                                'images/head.jpg',
+                                width: 50,
+                                height: 50,
+                              )),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Leye Kehinde',
+                                  style: GoogleFonts.darkerGrotesque(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'Amount: NGN 2,000',
+                                  style: GoogleFonts.darkerGrotesque(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black54),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              TextButton(
+                                style: ButtonStyle(
+                                    padding: MaterialStateProperty.resolveWith(
+                                      (states) => const EdgeInsets.symmetric(
+                                          horizontal: 20),
+                                    ),
+                                    backgroundColor: MaterialStateProperty.all(
+                                        AppColors.secondaryColor),
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10)))),
+                                onPressed: () {},
+                                child: const Text(
+                                  'Repay',
+                                  style: TextStyle(
+                                      color: AppColors.primaryColor,
+                                      fontSize: 18),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            */
             ],
           ),
         ),
