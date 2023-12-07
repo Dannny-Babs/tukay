@@ -57,11 +57,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Text(
                       'Get Urgent 2k and beat SAPA today',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.darkerGrotesque(
                           height: 0.8,
                           color: AppColors.secondaryColor,
-                          fontWeight: FontWeight.w900,
-                          fontFamily: GoogleFonts.darkerGrotesque().fontFamily,
+                          fontWeight: FontWeight.w800,
                           fontSize: 48),
                     ),
                     const SizedBox(
@@ -70,12 +69,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Text(
                       'Join over 10,000 people who have used Tukay to get urgent 2k and beat earn #6  CASHBACK on every 2k you borrow',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.darkerGrotesque(
                           height: 1,
                           color: AppColors.secondaryColor,
-                          fontFamily: GoogleFonts.darkerGrotesque().fontFamily,
                           fontSize: 24,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),

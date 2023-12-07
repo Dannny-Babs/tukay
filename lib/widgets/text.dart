@@ -18,6 +18,7 @@ class MyText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
+        fontWeight: FontWeight.w600,
         fontSize: size,
         fontFamily: GoogleFonts.darkerGrotesque().fontFamily,
         decoration: TextDecoration.none,
